@@ -1,0 +1,17 @@
+# Obsidian local UI state
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+
+# Raw or high-risk assistant transcripts
+inbox/**/*.jsonl
+inbox/**/_raw/
+inbox/**/*transcript*
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.bak

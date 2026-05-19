@@ -1,0 +1,21 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.bak
+__pycache__/
+*.pyc
+
+# Local assistant/runtime state
+.codex/
+.claude/
+
+# Do not store real work-log data in this setup repo.
+ai-work-logs/
+work_daily_logs/inbox/
+work_daily_logs/generated/
+inbox/
+generated/
+*.jsonl
+*transcript*

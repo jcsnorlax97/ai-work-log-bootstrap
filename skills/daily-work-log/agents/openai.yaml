@@ -1,0 +1,4 @@
+interface:
+  display_name: "Daily Work Log"
+  short_description: "Daily AI work logs for Obsidian"
+  default_prompt: "Use $daily-work-log to generate today's work daily log from the private AI work-log vault."

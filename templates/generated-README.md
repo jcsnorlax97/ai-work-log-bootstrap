@@ -1,0 +1,18 @@
+# Generated Logs
+
+Generated daily work logs go here:
+
+```text
+YYYY/MM/YYYY-MM-DD.md
+```
+
+These files should be ready to review in Obsidian. If you also keep a private/main vault, copy or link only reviewed generated notes into that vault.
+
+Generate these files with `daily-work-log` after the day's source captures have been collected under:
+
+```text
+../inbox/YYYY/MM/DD/conversations/
+../inbox/YYYY/MM/DD/notes/
+```
+
+Do not put raw conversation exports in this folder.

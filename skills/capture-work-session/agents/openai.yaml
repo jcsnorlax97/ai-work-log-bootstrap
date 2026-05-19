@@ -1,0 +1,4 @@
+interface:
+  display_name: "Capture Work Session"
+  short_description: "Save a redacted work session capture"
+  default_prompt: "Use $capture-work-session to save this session into the private AI work-log vault with secrets redacted."

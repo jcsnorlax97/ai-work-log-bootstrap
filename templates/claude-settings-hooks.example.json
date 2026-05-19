@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "AI_WORK_LOG_ROOT=\"/ABSOLUTE/PATH/TO/ai-work-logs\" python3 \"/ABSOLUTE/PATH/TO/ai-work-logs/hooks/capture_session_end.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
