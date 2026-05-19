@@ -40,6 +40,13 @@ Do not let this file point Claude Code at your private/main Obsidian vault.
 
 The hook writes metadata only by default. It does not copy raw transcripts unless explicitly opted in.
 
+After running the bootstrap script, the work-log vault contains platform-specific hook templates:
+
+```text
+templates/claude-settings-hooks.macos.example.json
+templates/claude-settings-hooks.windows.example.json
+```
+
 macOS command pattern:
 
 ```json

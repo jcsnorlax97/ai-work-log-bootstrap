@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "set \"AI_WORK_LOG_ROOT=%USERPROFILE%\\Documents\\a-ai-obsidian-vaults\\ai-work-logs\" && python \"%USERPROFILE%\\Documents\\a-ai-obsidian-vaults\\ai-work-logs\\hooks\\capture_session_end.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

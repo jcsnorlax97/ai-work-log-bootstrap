@@ -11,7 +11,7 @@ function Ensure-Directory {
     param([string]$Path)
 
     if (-not (Test-Path -LiteralPath $Path)) {
-        New-Item -ItemType Directory -Path $Path | Out-Null
+        New-Item -ItemType Directory -Path $Path -Force | Out-Null
         Write-Host "created: $Path"
     }
 }
@@ -48,11 +48,9 @@ Copy-IfMissing (Join-Path $RepoRoot "templates\generated-README.md") (Join-Path 
 Copy-IfMissing (Join-Path $RepoRoot "bootstrap\templates\work-log-vault.gitignore") (Join-Path $VaultRoot ".gitignore")
 
 Get-ChildItem -LiteralPath (Join-Path $RepoRoot "templates") -File | ForEach-Object {
-    if ($_.Name -in @("vault-README.md", "inbox-README.md", "generated-README.md")) {
-        return
+    if ($_.Name -notin @("vault-README.md", "inbox-README.md", "generated-README.md")) {
+        Copy-IfMissing $_.FullName (Join-Path $VaultRoot ("templates\" + $_.Name))
     }
-
-    Copy-IfMissing $_.FullName (Join-Path $VaultRoot ("templates\" + $_.Name))
 }
 
 Copy-IfMissing (Join-Path $RepoRoot "hooks\capture_session_end.py") (Join-Path $VaultRoot "hooks\capture_session_end.py")

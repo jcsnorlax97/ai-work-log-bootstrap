@@ -30,6 +30,22 @@ Get-ChildItem "$env:USERPROFILE\Documents\a-ai-obsidian-vaults\ai-work-logs" -Di
 python -m py_compile "$env:USERPROFILE\Documents\a-ai-obsidian-vaults\ai-work-logs\hooks\capture_session_end.py"
 ```
 
+## Claude Code Hook Template
+
+After bootstrapping, use this file as the Windows `SessionEnd` hook reference:
+
+```text
+%USERPROFILE%\Documents\a-ai-obsidian-vaults\ai-work-logs\templates\claude-settings-hooks.windows.example.json
+```
+
+Merge its content into:
+
+```text
+%USERPROFILE%\.claude\settings.json
+```
+
+Then run `/hooks` inside Claude Code to confirm it is loaded.
+
 ## Obsidian
 
 Open this folder as a separate lightweight vault:

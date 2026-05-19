@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo Select claude-settings-hooks.macos.example.json or claude-settings-hooks.windows.example.json and adjust paths.",
+            "command": "AI_WORK_LOG_ROOT=\"$HOME/Documents/a-ai-obsidian-vaults/ai-work-logs\" python3 \"$HOME/Documents/a-ai-obsidian-vaults/ai-work-logs/hooks/capture_session_end.py\"",
             "timeout": 10
           }
         ]
