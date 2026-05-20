@@ -13,6 +13,7 @@ Generate these files with `daily-work-log` after the day's source captures have 
 ```text
 ../inbox/YYYY/MM/DD/conversations/
 ../inbox/YYYY/MM/DD/notes/
+../inbox/YYYY/MM/DD/automations/<automation-id>/
 ```
 
 Do not put raw conversation exports in this folder.

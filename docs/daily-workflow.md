@@ -23,6 +23,18 @@ Add quick manual notes when useful:
 
 Use short notes. Do not paste credentials or raw customer/private data.
 
+If a Codex heartbeat automation produced a `Vault Sync Block`, save it with `automation-vault-sync`:
+
+```text
+Use automation-vault-sync to sync the latest Vault Sync Block into /path/to/ai-work-logs.
+```
+
+The output should go to:
+
+```text
+<work-log-root>/inbox/YYYY/MM/DD/automations/<automation-id>/
+```
+
 ## Session End
 
 Ask the assistant:
@@ -51,6 +63,8 @@ The output should go to:
 ```text
 <work-log-root>/generated/YYYY/MM/YYYY-MM-DD.md
 ```
+
+Daily generation consumes `conversations/`, `notes/`, and `automations/<automation-id>/` for the target date.
 
 ## Review
 

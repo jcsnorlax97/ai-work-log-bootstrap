@@ -43,6 +43,8 @@ Windows: %USERPROFILE%\Documents\a-ai-obsidian-vaults\ai-work-logs\
         DD/
           conversations/
           notes/
+          automations/
+            <automation-id>/
   generated/
     README.md
     YYYY/
@@ -66,9 +68,18 @@ Manual notes go here:
 <work-log-root>/inbox/YYYY/MM/DD/notes/
 ```
 
+Automation digests go here:
+
+```text
+<work-log-root>/inbox/YYYY/MM/DD/automations/<automation-id>/
+```
+
+Use `conversations/` only for human assistant session captures. Use `automations/` for scheduled outputs such as Codex heartbeat digests. The execution mechanism, such as heartbeat or cron, should not be encoded as another folder layer.
+
 Preferred source files:
 
 - Redacted `.md` captures created by `capture-work-session`.
+- Redacted `.md` automation digests created by `automation-vault-sync`.
 - Human-written `.md` notes.
 - Short `.txt` notes.
 
@@ -114,6 +125,26 @@ needs_review: true
 ```
 
 Use `candidate_tags` because assistant classification is not authoritative.
+
+## Automation Digest Frontmatter
+
+Automation digests should include:
+
+```yaml
+---
+status: inbox
+source: codex-heartbeat
+project: example-project
+automation_id: example-automation
+topic: short-topic
+candidate_tags:
+  - work/log
+  - automation/codex
+needs_review: true
+---
+```
+
+Use `automation_id` as the stable folder name under `automations/`.
 
 ## Tag Defaults
 

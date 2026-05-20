@@ -18,12 +18,19 @@ End-of-day generation:
 Read /path/to/ai-work-log-bootstrap/skills/daily-work-log/SKILL.md and use it to generate today's work daily log from /path/to/ai-work-logs.
 ```
 
+If a saved assistant response contains a markdown-ready `Vault Sync Block`, sync it as an automation digest:
+
+```text
+Read /path/to/ai-work-log-bootstrap/skills/automation-vault-sync/SKILL.md and use it to sync the provided Vault Sync Block into /path/to/ai-work-logs.
+```
+
 ## Optional Global Claude Memory
 
 Claude Code can load global instructions from:
 
 ```text
-~/.claude/CLAUDE.md
+macOS/Linux: ~/.claude/CLAUDE.md
+Windows:     %USERPROFILE%\.claude\CLAUDE.md
 ```
 
 Copy or merge the content of:

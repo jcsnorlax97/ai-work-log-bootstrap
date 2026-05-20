@@ -9,6 +9,7 @@ Do not publish this vault to a public repo.
 ```text
 inbox/YYYY/MM/DD/conversations/
 inbox/YYYY/MM/DD/notes/
+inbox/YYYY/MM/DD/automations/<automation-id>/
 generated/YYYY/MM/YYYY-MM-DD.md
 templates/
 hooks/
@@ -17,9 +18,10 @@ hooks/
 ## Daily Flow
 
 1. Save redacted session captures into `inbox/YYYY/MM/DD/conversations/`.
-2. Add manual notes into `inbox/YYYY/MM/DD/notes/`.
-3. Generate daily summaries into `generated/YYYY/MM/YYYY-MM-DD.md`.
-4. Review generated notes before copying or linking them into another vault.
+2. Save automation digests into `inbox/YYYY/MM/DD/automations/<automation-id>/`.
+3. Add manual notes into `inbox/YYYY/MM/DD/notes/`.
+4. Generate daily summaries into `generated/YYYY/MM/YYYY-MM-DD.md`.
+5. Review generated notes before copying or linking them into another vault.
 
 ## Security
 

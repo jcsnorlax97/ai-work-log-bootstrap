@@ -11,6 +11,7 @@ Main vault:     <private Obsidian vault, not scanned by assistants>
 ## Clone The Setup Repo
 
 ```powershell
+New-Item -ItemType Directory -Path C:\work -Force | Out-Null
 git clone git@github.com:jcsnorlax97/ai-work-log-bootstrap.git C:\work\ai-work-log-bootstrap
 ```
 
@@ -23,11 +24,35 @@ PowerShell -ExecutionPolicy Bypass -File .\bootstrap\windows\bootstrap-ai-work-l
 
 The script creates the private work-log vault and copies templates/hooks. It does not modify your private/main Obsidian vault.
 
+## Optional Claude Code Global Memory
+
+Claude Code can load global instructions from:
+
+```text
+%USERPROFILE%\.claude\CLAUDE.md
+```
+
+Copy or merge the content of this file:
+
+```text
+C:\work\ai-work-log-bootstrap\templates\global-CLAUDE.md
+```
+
+Then replace placeholder paths with your actual setup repo and work-log vault paths. Do not point this file at your private/main Obsidian vault.
+
 ## Verify
 
 ```powershell
 Get-ChildItem "$env:USERPROFILE\Documents\a-ai-obsidian-vaults\ai-work-logs" -Directory
 python -m py_compile "$env:USERPROFILE\Documents\a-ai-obsidian-vaults\ai-work-logs\hooks\capture_session_end.py"
+```
+
+Expected inbox source types:
+
+```text
+inbox\YYYY\MM\DD\conversations\
+inbox\YYYY\MM\DD\notes\
+inbox\YYYY\MM\DD\automations\
 ```
 
 ## Claude Code Hook Template

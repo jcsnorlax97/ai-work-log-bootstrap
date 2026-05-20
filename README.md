@@ -36,7 +36,7 @@ The AI work-log vault can be opened in Obsidian as a separate lightweight vault.
 bootstrap/        scripts that initialize an empty AI work-log vault
 docs/             setup guides for macOS, Windows, Claude Code, and Codex
 hooks/            optional Claude Code SessionEnd metadata hook
-skills/           capture-work-session and daily-work-log skill definitions
+skills/           capture, automation sync, and daily-log skill definitions
 spec/             folder contract, formats, and security model
 templates/        vault README, capture templates, Claude prompt templates
 ```
@@ -75,10 +75,11 @@ The scripts create the work-log vault layout and copy templates/hooks. They do n
 
 1. Work in the project repo, not in your private/main Obsidian vault.
 2. Use `capture-work-session` to save a summarized, redacted session capture into the AI work-log vault.
-3. Add manual notes to the same day's inbox when needed.
-4. Run `daily-work-log` at end of day to create a generated daily summary.
-5. Review tags and content in the AI work-log vault.
-6. Copy or link only reviewed notes into your private/main Obsidian vault if desired.
+3. Use `automation-vault-sync` to save reviewed heartbeat automation digests when needed.
+4. Add manual notes to the same day's inbox when needed.
+5. Run `daily-work-log` at end of day to create a generated daily summary.
+6. Review tags and content in the AI work-log vault.
+7. Copy or link only reviewed notes into your private/main Obsidian vault if desired.
 
 ## Security Defaults
 

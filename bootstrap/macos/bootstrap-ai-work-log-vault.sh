@@ -25,6 +25,7 @@ today_day="$(date +%d)"
 
 mkdir -p "$target/inbox/$today_year/$today_month/$today_day/conversations"
 mkdir -p "$target/inbox/$today_year/$today_month/$today_day/notes"
+mkdir -p "$target/inbox/$today_year/$today_month/$today_day/automations"
 mkdir -p "$target/generated"
 mkdir -p "$target/templates"
 mkdir -p "$target/hooks"

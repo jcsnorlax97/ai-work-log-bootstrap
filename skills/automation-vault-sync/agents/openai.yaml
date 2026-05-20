@@ -1,0 +1,7 @@
+interface:
+  display_name: "Automation Vault Sync"
+  short_description: "Save automation digests into work-log inbox"
+  default_prompt: "Use $automation-vault-sync to sync the latest Vault Sync Block into my AI work-log vault."
+
+policy:
+  allow_implicit_invocation: true

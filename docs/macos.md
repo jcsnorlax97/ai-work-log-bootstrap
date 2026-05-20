@@ -31,6 +31,14 @@ find "$HOME/Documents/a-ai-obsidian-vaults/ai-work-logs" -maxdepth 3 -type d
 python3 -m py_compile "$HOME/Documents/a-ai-obsidian-vaults/ai-work-logs/hooks/capture_session_end.py"
 ```
 
+Expected inbox source types:
+
+```text
+inbox/YYYY/MM/DD/conversations/
+inbox/YYYY/MM/DD/notes/
+inbox/YYYY/MM/DD/automations/
+```
+
 ## Obsidian
 
 Open this folder as a separate lightweight vault:

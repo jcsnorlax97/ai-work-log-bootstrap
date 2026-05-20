@@ -38,6 +38,7 @@ $Day = $Today.ToString("dd")
 
 Ensure-Directory (Join-Path $VaultRoot "inbox\$Year\$Month\$Day\conversations")
 Ensure-Directory (Join-Path $VaultRoot "inbox\$Year\$Month\$Day\notes")
+Ensure-Directory (Join-Path $VaultRoot "inbox\$Year\$Month\$Day\automations")
 Ensure-Directory (Join-Path $VaultRoot "generated")
 Ensure-Directory (Join-Path $VaultRoot "templates")
 Ensure-Directory (Join-Path $VaultRoot "hooks")

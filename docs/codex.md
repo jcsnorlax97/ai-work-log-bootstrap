@@ -12,6 +12,12 @@ Capture a session:
 Use /path/to/ai-work-log-bootstrap/skills/capture-work-session/SKILL.md to capture this session into /path/to/ai-work-logs.
 ```
 
+Sync an automation digest:
+
+```text
+Use /path/to/ai-work-log-bootstrap/skills/automation-vault-sync/SKILL.md to sync the latest Vault Sync Block into /path/to/ai-work-logs.
+```
+
 Generate an end-of-day note:
 
 ```text
@@ -24,6 +30,7 @@ Install the skill folders into Codex's global skills directory:
 
 ```text
 ~/.codex/skills/capture-work-session
+~/.codex/skills/automation-vault-sync
 ~/.codex/skills/daily-work-log
 ```
 
@@ -33,6 +40,7 @@ After restart:
 
 ```text
 Use $capture-work-session to capture this session into /path/to/ai-work-logs.
+Use $automation-vault-sync to sync the latest Vault Sync Block into /path/to/ai-work-logs.
 Use $daily-work-log to generate today's work daily log from /path/to/ai-work-logs.
 ```
 

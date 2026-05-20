@@ -9,7 +9,7 @@ description: Generate Obsidian-ready daily work logs from redacted Claude Code, 
 
 Generate one structured daily work log from the current day's exported conversations and manual notes. Keep the workflow reusable between Claude Code and Codex by using only portable folder conventions and markdown files.
 
-Use `capture-work-session` earlier in the day to create redacted session captures in the inbox. This skill consumes those captures and creates the final daily work log.
+Use `capture-work-session` earlier in the day to create redacted session captures in the inbox. Use `automation-vault-sync` to save reviewed automation digests into the same day's inbox. This skill consumes those sources and creates the final daily work log.
 
 ## Folder Contract
 
@@ -34,6 +34,7 @@ Use this folder structure under the resolved work-log root:
 <work-log-root>/
   inbox/YYYY/MM/DD/conversations/
   inbox/YYYY/MM/DD/notes/
+  inbox/YYYY/MM/DD/automations/<automation-id>/
   generated/YYYY/MM/
 ```
 
@@ -55,6 +56,12 @@ Manual note input path:
 <work-log-root>/inbox/YYYY/MM/DD/notes/
 ```
 
+Automation digest input path:
+
+```text
+<work-log-root>/inbox/YYYY/MM/DD/automations/
+```
+
 Use the user's local date unless the user gives another date.
 
 ## Input Rules
@@ -64,6 +71,7 @@ Use only these sources:
 - Current conversation context.
 - Files in today's `inbox/YYYY/MM/DD/conversations/`.
 - Files in today's `inbox/YYYY/MM/DD/notes/`.
+- Files in today's `inbox/YYYY/MM/DD/automations/<automation-id>/`.
 - Specific files the user explicitly asks you to include.
 
 Do not inspect the user's private/main Obsidian vault root. Do not scan unrelated home directories, parent folders, hidden application history, or assistant transcript stores. Do not follow symlinks, shortcuts, or junctions from the work-log root into private vaults or unrelated folders.
@@ -84,8 +92,8 @@ Ignore generated logs when gathering inputs, unless the user asks to revise an e
 
 1. Resolve the target date.
 2. Resolve the work-log root and locate the matching daily inbox and generated output paths.
-3. Read today's conversation captures and manual notes.
-4. Identify distinct work conversations, projects, incidents, decisions, commands, errors, fixes, and follow-ups.
+3. Read today's conversation captures, automation digests, and manual notes.
+4. Identify distinct work conversations, automation outputs, projects, incidents, decisions, commands, errors, fixes, and follow-ups.
 5. Extract durable knowledge into two types:
    - `Notes`: what was learned, decided, discovered, or clarified.
    - `Steps`: how to repeat a process or solve a problem.
@@ -140,6 +148,7 @@ Keep work logs separate from personal logs:
 Include:
 
 - Completed work.
+- Scheduled automation outputs and reviewed automation digests.
 - Meaningful decisions.
 - Bugs, incidents, root causes, and fixes.
 - Commands that matter for repeatability.

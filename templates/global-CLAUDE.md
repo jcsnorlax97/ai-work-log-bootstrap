@@ -24,6 +24,7 @@ When a session is about a specific project, remember that the end-of-day log sys
 ```text
 <work-log-root>/inbox/YYYY/MM/DD/conversations/
 <work-log-root>/inbox/YYYY/MM/DD/notes/
+<work-log-root>/inbox/YYYY/MM/DD/automations/<automation-id>/
 ```
 
 Generated daily logs go to:
@@ -40,6 +41,13 @@ If the user says "capture this session", "save this session to the daily log inb
 4. Include source assistant, project name, topic, goals, work completed, decisions, bugs or blockers, useful commands, files touched, notes, steps, and follow-ups.
 5. Redact secrets, tokens, credentials, private keys, cookies, and sensitive customer/private data.
 6. Use `#ai/claude` for Claude Code source material.
+
+If the user says "sync this automation", "save this Vault Sync Block", "archive this automation digest", or similar:
+
+1. Prefer using `/path/to/ai-work-log-bootstrap/skills/automation-vault-sync/SKILL.md` if it is available.
+2. Write automation outputs to today's `automations/<automation-id>/` folder, not `conversations/`.
+3. Preserve `automation_id`, `source`, `project`, `topic`, `candidate_tags`, and `needs_review` frontmatter.
+4. Redact secrets, tokens, credentials, private keys, cookies, and sensitive customer/private data.
 
 Do not inspect the user's private/main Obsidian vault root.
 
