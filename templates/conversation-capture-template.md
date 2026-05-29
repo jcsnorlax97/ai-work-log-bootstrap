@@ -2,6 +2,7 @@
 status: inbox
 source: claude-code-or-codex
 project:
+scope: work
 topic:
 candidate_tags:
   - work/log
@@ -14,6 +15,7 @@ needs_review: true
 
 Source assistant: Claude Code / Codex
 Project:
+Scope: work / personal / mixed
 Topic:
 Time range:
 

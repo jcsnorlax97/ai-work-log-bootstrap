@@ -62,7 +62,7 @@ Conversation captures go here:
 <work-log-root>/inbox/YYYY/MM/DD/conversations/
 ```
 
-Manual notes go here:
+Manual notes and input notes go here:
 
 ```text
 <work-log-root>/inbox/YYYY/MM/DD/notes/
@@ -75,6 +75,15 @@ Automation digests go here:
 ```
 
 Use `conversations/` only for human assistant session captures. Use `automations/` for scheduled outputs such as Codex heartbeat digests. The execution mechanism, such as heartbeat or cron, should not be encoded as another folder layer.
+
+Use `notes/` for:
+
+- Human-written manual notes.
+- Redacted input notes created from external sources such as shared AI
+  conversations, meeting transcripts, chat excerpts, articles, papers, workflow
+  ideas, and copied excerpts.
+
+Do not put raw external transcripts into `notes/` by default.
 
 Preferred source files:
 
@@ -106,6 +115,10 @@ needs_review: true
 ---
 ```
 
+Generated daily notes should include a `Source Coverage` section listing which
+conversation captures, input notes, manual notes, and automation digests were
+included for the day.
+
 ## Capture Frontmatter
 
 Session captures should include:
@@ -115,6 +128,7 @@ Session captures should include:
 status: inbox
 source: codex
 project: example-project
+scope: work
 topic: short-topic
 candidate_tags:
   - work/log
@@ -126,6 +140,32 @@ needs_review: true
 
 Use `candidate_tags` because assistant classification is not authoritative.
 
+Use `scope` as the primary work/personal boundary. Valid values:
+
+- `work`
+- `personal`
+- `mixed`
+
+Use `mixed` only when source material materially serves both work and personal
+systems.
+
+## Note Frontmatter
+
+Manual notes and input notes should include:
+
+```yaml
+---
+status: inbox
+source: manual-or-external-input
+project: example-project
+scope: personal
+topic: short-topic
+candidate_tags:
+  - personal/log
+needs_review: true
+---
+```
+
 ## Automation Digest Frontmatter
 
 Automation digests should include:
@@ -135,6 +175,7 @@ Automation digests should include:
 status: inbox
 source: codex-heartbeat
 project: example-project
+scope: work
 automation_id: example-automation
 topic: short-topic
 candidate_tags:
@@ -153,12 +194,20 @@ Default work tags:
 ```text
 #work/log
 #work/learn
+#personal/log
+#personal/learn
+#mixed/log
+#mixed/learn
 #ai/claude
 #ai/codex
 ```
 
 Rules:
 
+- Use `#work/*` for work-scoped source material.
+- Use `#personal/*` for personal-scoped source material.
+- Use `#mixed/*` when source material materially serves both work and personal
+  systems.
 - Use `#ai/claude` for Claude Code source material.
 - Use `#ai/codex` for Codex source material.
 - Use both only when both materially contributed to the same work item.

@@ -2,15 +2,17 @@
 status: inbox
 source: manual
 project:
+scope: personal
 topic:
 candidate_tags:
-  - work/log
+  - personal/log
 needs_review: true
 ---
 
 # Manual Work Note - YYYY-MM-DD - Short Topic
 
 Project:
+Scope: work / personal / mixed
 Topic:
 
 ## What Happened

@@ -46,6 +46,7 @@ Prefer a fenced block labeled `markdown` that contains frontmatter and note cont
 status: inbox
 source: codex-heartbeat
 project: example-project
+scope: work
 automation_id: ai-reel
 topic: Daily IG Reel pain point digest
 candidate_tags:
@@ -73,11 +74,16 @@ If the block is missing `automation_id`, infer it from the user request, the aut
 3. Resolve `automation_id`.
    - Prefer `automation_id` from frontmatter.
    - Otherwise use a stable lowercase slug from the automation name.
-4. Redact secrets before writing.
+4. Resolve `scope`.
+   - Prefer `scope` from frontmatter.
+   - Use one of `work`, `personal`, or `mixed`.
+   - Infer from the automation purpose when missing; use `mixed` only when the
+     digest materially serves both work and personal systems.
+5. Redact secrets before writing.
    - Remove API keys, tokens, passwords, cookies, private keys, customer private data, and confidential URLs.
    - Use `[redacted]` where content is removed.
-5. Create only the exact target folder for that date and automation id.
-6. Write or update one markdown file:
+6. Create only the exact target folder for that date and automation id.
+7. Write or update one markdown file:
 
 ```text
 <work-log-root>/inbox/YYYY/MM/DD/automations/<automation-id>/YYYY-MM-DD-digest.md
@@ -120,5 +126,6 @@ Report:
 - The file path written.
 - The automation id used.
 - The date used.
+- The scope used.
 - Whether the file was created, updated, or appended.
 - Any redactions or assumptions.

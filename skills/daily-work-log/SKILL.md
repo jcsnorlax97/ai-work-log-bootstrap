@@ -1,15 +1,18 @@
 ---
 name: daily-work-log
-description: Generate Obsidian-ready daily work logs from redacted Claude Code, Codex, or other AI coding assistant captures in a private AI work-log vault.
+description: Generate Obsidian-ready daily logs from redacted AI assistant captures, input notes, manual notes, and automation digests in a private AI work-log vault.
 ---
 
 # Daily Work Log
 
 ## Overview
 
-Generate one structured daily work log from the current day's exported conversations and manual notes. Keep the workflow reusable between Claude Code and Codex by using only portable folder conventions and markdown files.
+Generate one structured daily work log from the current day's exported
+conversations, source notes, and automation digests. Keep the workflow reusable
+between Claude Code and Codex by using only portable folder conventions and
+markdown files.
 
-Use `capture-work-session` earlier in the day to create redacted session captures in the inbox. Use `automation-vault-sync` to save reviewed automation digests into the same day's inbox. This skill consumes those sources and creates the final daily work log.
+Use `capture-work-session` earlier in the day to create redacted session captures in the inbox. Use `capture-input-note` for external source material, and use `automation-vault-sync` to save reviewed automation digests into the same day's inbox. This skill consumes those sources and creates the final daily log.
 
 ## Folder Contract
 
@@ -50,7 +53,7 @@ Conversation input path:
 <work-log-root>/inbox/YYYY/MM/DD/conversations/
 ```
 
-Manual note input path:
+Source note input path:
 
 ```text
 <work-log-root>/inbox/YYYY/MM/DD/notes/
@@ -92,14 +95,18 @@ Ignore generated logs when gathering inputs, unless the user asks to revise an e
 
 1. Resolve the target date.
 2. Resolve the work-log root and locate the matching daily inbox and generated output paths.
-3. Read today's conversation captures, automation digests, and manual notes.
+3. Read today's conversation captures, automation digests, manual notes, and
+   input notes.
 4. Identify distinct work conversations, automation outputs, projects, incidents, decisions, commands, errors, fixes, and follow-ups.
-5. Extract durable knowledge into two types:
+5. Classify each source with `scope: work | personal | mixed`. Prefer an
+   explicit frontmatter `scope`; otherwise infer conservatively from the
+   content and mention assumptions.
+6. Extract durable knowledge into two types:
    - `Notes`: what was learned, decided, discovered, or clarified.
    - `Steps`: how to repeat a process or solve a problem.
-6. Generate or update the daily markdown log.
-7. Preserve manually edited content if the output file already exists.
-8. Report the output path and any missing input assumptions.
+7. Generate or update the daily markdown log.
+8. Preserve manually edited content if the output file already exists.
+9. Report the output path and any missing input assumptions.
 
 ## Output Format
 
@@ -113,21 +120,40 @@ needs_review: true
 
 # Work Daily Log - YYYY-MM-DD
 
+## Source Coverage
+
+- Conversations:
+	- ...
+- Input Notes:
+	- ...
+- Manual Notes:
+	- ...
+- Automations:
+	- ...
+
 ## Work Log
 
 - **<<Project or Workstream>> (<<Assistant>>; <<Topic>>)**: Did the following: #work/log #ai/claude
 	- ...
 
-- **<<Project or Workstream>> (<<Assistant>>; <<Topic>>)**: Learnt the following: #work/log #ai/claude
+## Learning Candidates
 
-	- ==<<Technology or Domain>> - Notes - <<Specific Note Name>>== #work/learn #ai/claude
-		- Notes
-			- ...
+- ==<<Technology or Domain>> - Notes - <<Specific Note Name>>== #work/learn #ai/claude
+	- Notes
+		- ...
 
-	- ==<<Technology or Domain>> - Steps - <<Specific Procedure Name>>== #work/learn #ai/claude
-		- Steps
-			1. ...
-			2. ...
+- ==<<Technology or Domain>> - Steps - <<Specific Procedure Name>>== #work/learn #ai/claude
+	- Steps
+		1. ...
+		2. ...
+
+## Review Queue Candidates
+
+- ...
+
+## Follow-ups
+
+- ...
 ```
 
 Agent tag rules:
@@ -141,7 +167,11 @@ Keep work logs separate from personal logs:
 
 - Work event tags: `#work/log`
 - Work learning tags: `#work/learn`
-- Personal event tags are not used by this skill.
+- Personal event tags: `#personal/log`
+- Personal learning tags: `#personal/learn`
+- Mixed-scope event tags: `#mixed/log`
+- Mixed-scope learning tags: `#mixed/learn`
+- Use `#mixed/*` when a source materially serves both work and personal systems.
 
 ## Extraction Rules
 
@@ -155,6 +185,8 @@ Include:
 - Setup or environment lessons.
 - Reusable troubleshooting steps.
 - Follow-ups and unresolved blockers.
+- A `Source Coverage` section that lists which conversation captures, input
+  notes, manual notes, and automation digests were included.
 
 Exclude:
 

@@ -65,10 +65,12 @@ If a matching file already exists, update it instead of creating duplicates.
 1. Infer the assistant name: `Claude Code`, `Codex`, or the assistant named by the user.
 2. Infer the project name from the current working directory, repository, user message, or session content.
 3. Infer a short topic from the session goal.
-4. Resolve the work-log root and create today's nested inbox folders if needed.
-5. Write or update one markdown capture file.
-6. Redact sensitive values before writing.
-7. Report the capture file path and any assumptions.
+4. Infer `scope: work | personal | mixed`. Use `mixed` only when the session
+   materially serves both work and personal systems.
+5. Resolve the work-log root and create today's nested inbox folders if needed.
+6. Write or update one markdown capture file.
+7. Redact sensitive values before writing.
+8. Report the capture file path and any assumptions.
 
 ## Capture Format
 
@@ -79,6 +81,7 @@ Use this structure:
 status: inbox
 source: claude-code-or-codex
 project:
+scope:
 topic:
 candidate_tags:
   - work/log
@@ -91,6 +94,7 @@ needs_review: true
 
 Source assistant: Claude Code / Codex
 Project:
+Scope:
 Topic:
 Time range:
 

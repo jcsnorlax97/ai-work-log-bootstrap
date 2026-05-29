@@ -2,6 +2,7 @@
 status: inbox
 source: codex-heartbeat
 project:
+scope: work
 automation_id:
 topic:
 candidate_tags:
@@ -11,6 +12,8 @@ needs_review: true
 ---
 
 # Automation Digest - YYYY-MM-DD - Short Topic
+
+Scope: work / personal / mixed
 
 <!-- automation-vault-sync:start -->
 

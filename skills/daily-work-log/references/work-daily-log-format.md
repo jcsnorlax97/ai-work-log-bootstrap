@@ -9,6 +9,7 @@ For May 19, 2026, use:
   inbox/2026/05/19/
     conversations/
     notes/
+    automations/
   generated/2026/05/2026-05-19.md
 ```
 
@@ -45,26 +46,65 @@ needs_review: true
 
 # Work Daily Log - YYYY-MM-DD
 
+## Source Coverage
+
+- Conversations:
+	- `conversations/claude-code-api-debugging.md` — work
+- Input Notes:
+	- `notes/gemini-meeting-video-workflow.md` — mixed
+- Manual Notes:
+	- `notes/manual-followups.md` — personal
+- Automations:
+	- `automations/example-automation/digest.md` — work
+
 ## Work Log
 
 - **Project Name (Claude Code; Short Topic)**: Did the following: #work/log #ai/claude
 	- ...
 
-- **Project Name (Claude Code; Short Topic)**: Learnt the following: #work/log #ai/claude
+## Learning Candidates
 
-	- ==Technology - Notes - Specific Learning== #work/learn #ai/claude
-		- Notes
-			- ...
+- ==Technology - Notes - Specific Learning== #work/learn #ai/claude
+	- Notes
+		- ...
 
-	- ==Technology - Steps - Repeatable Procedure== #work/learn #ai/claude
-		- Steps
-			1. ...
-			2. ...
+- ==Technology - Steps - Repeatable Procedure== #work/learn #ai/claude
+	- Steps
+		1. ...
+		2. ...
+
+## Review Queue Candidates
+
+- ...
 
 ## Follow-ups
 
 - ...
 ```
+
+## Scope Rules
+
+Use frontmatter `scope` when present:
+
+```yaml
+scope: work
+```
+
+Valid values:
+
+- `work`: company, customer, work meetings, delivery work, or work tooling.
+- `personal`: private learning, personal systems, personal projects, life admin,
+  or private knowledge work.
+- `mixed`: source material materially serves both work and personal systems.
+
+Use matching tags:
+
+- `work` -> `#work/log`, `#work/learn`
+- `personal` -> `#personal/log`, `#personal/learn`
+- `mixed` -> `#mixed/log`, `#mixed/learn`
+
+If scope is missing, infer conservatively and mention the assumption in
+`Source Coverage`.
 
 ## Note Type Rules
 
