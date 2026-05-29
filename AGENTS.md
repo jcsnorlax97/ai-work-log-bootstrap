@@ -18,6 +18,13 @@ read:
 Use that roadmap as the current source of truth for how this repo relates to the
 Personal AI Operating System.
 
+Before cross-repo AI OS work, run the central freshness check from the standard
+sibling repo:
+
+```text
+../ai-ops-ecosystem-spec/scripts/check-ecosystem-repos.sh --fetch
+```
+
 ## Repo Boundary
 
 - This repo owns generic work-log vault contracts, skills, templates, bootstrap
