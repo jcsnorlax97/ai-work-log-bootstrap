@@ -105,7 +105,7 @@ def main() -> int:
                 "",
                 "- This file was created by the Claude Code SessionEnd hook.",
                 "- Use the `capture-assistant-session` skill for summarized, redacted session captures.",
-                "- Run the `daily-work-log` skill at end of day to summarize reviewed captures.",
+                "- Run the `daily-work-log` skill at end of day to generate the daily capture review.",
                 "- Raw transcript copying is disabled by default because transcripts may contain secrets.",
                 "",
             ]
@@ -120,5 +120,5 @@ if __name__ == "__main__":
     try:
         raise SystemExit(main())
     except Exception as exc:
-        print(f"daily work log capture failed: {exc}", file=sys.stderr)
+        print(f"AI work-log session metadata capture failed: {exc}", file=sys.stderr)
         raise SystemExit(1)

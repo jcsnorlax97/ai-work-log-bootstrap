@@ -15,7 +15,7 @@ Read /path/to/ai-work-log-bootstrap/skills/capture-assistant-session/SKILL.md an
 End-of-day generation:
 
 ```text
-Read /path/to/ai-work-log-bootstrap/skills/daily-work-log/SKILL.md and use it to generate today's work daily log from /path/to/ai-work-logs.
+Read /path/to/ai-work-log-bootstrap/skills/daily-work-log/SKILL.md and use it to generate today's daily capture review from /path/to/ai-work-logs.
 ```
 
 If a saved assistant response contains a markdown-ready `Vault Sync Block`, sync it as an automation digest:

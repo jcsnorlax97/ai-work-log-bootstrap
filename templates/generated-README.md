@@ -1,14 +1,16 @@
-# Generated Logs
+# Generated Daily Capture Reviews
 
-Generated daily work logs go here:
+Generated daily capture reviews go here:
 
 ```text
 YYYY/MM/YYYY-MM-DD.md
 ```
 
-These files should be ready to review in Obsidian. If you also keep a private/main vault, copy or link only reviewed generated notes into that vault.
+These files are review and processing artifacts, not final Second Brain notes.
+If you also keep a private/main vault, copy or link only approved candidates
+into that vault.
 
-Generated daily logs should include `Source Coverage` so it is clear which
+Generated daily capture reviews should include `Source Coverage` so it is clear which
 conversation captures, input notes, manual notes, and automation digests were
 included.
 

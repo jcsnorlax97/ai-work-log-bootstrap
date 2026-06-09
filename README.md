@@ -50,7 +50,7 @@ generated/
 ai-work-logs/
 *.jsonl
 real work captures
-generated daily logs
+generated daily capture reviews
 private Obsidian notes
 customer data
 credentials or secrets
@@ -78,9 +78,10 @@ The scripts create the work-log vault layout and copy templates/hooks. They do n
 2. Use `capture-assistant-session` to save a summarized, redacted session capture into the AI work-log vault.
 3. Use `automation-vault-sync` to save reviewed heartbeat automation digests when needed.
 4. Add manual notes to the same day's inbox when needed.
-5. Run `daily-work-log` at end of day to create a generated daily summary.
-6. Review tags and content in the AI work-log vault.
-7. Copy or link only reviewed notes into your private/main Obsidian vault if desired.
+5. Run `daily-work-log` at end of day to create a daily capture review.
+6. Review activity evidence, durable candidates, and operational follow-ups.
+7. Promote only approved candidates into your private/main Obsidian vault,
+   Calendar, reminders, or task system.
 
 ## Security Defaults
 

@@ -5,7 +5,7 @@ Use this at the start of a Claude Code session when working on a specific projec
 Preferred current workflow: use `/path/to/ai-work-log-bootstrap/skills/capture-assistant-session/SKILL.md` near the end of the session and write to an independent AI work-log vault.
 
 ```text
-For this Claude Code session, please keep an end-of-session capture for my work daily log.
+For this Claude Code session, please keep an end-of-session capture for my daily capture review.
 
 Use this portable log inbox structure:
 

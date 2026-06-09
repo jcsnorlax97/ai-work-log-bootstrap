@@ -21,7 +21,7 @@ Use /path/to/ai-work-log-bootstrap/skills/automation-vault-sync/SKILL.md to sync
 Generate an end-of-day note:
 
 ```text
-Use /path/to/ai-work-log-bootstrap/skills/daily-work-log/SKILL.md to generate today's work daily log from /path/to/ai-work-logs.
+Use /path/to/ai-work-log-bootstrap/skills/daily-work-log/SKILL.md to generate today's daily capture review from /path/to/ai-work-logs.
 ```
 
 ## Installed Skill Usage
@@ -41,7 +41,7 @@ After restart:
 ```text
 Use $capture-assistant-session to capture this session into /path/to/ai-work-logs.
 Use $automation-vault-sync to sync the latest Vault Sync Block into /path/to/ai-work-logs.
-Use $daily-work-log to generate today's work daily log from /path/to/ai-work-logs.
+Use $daily-work-log to generate today's daily capture review from /path/to/ai-work-logs.
 ```
 
 `capture-work-session` may remain installed temporarily as a deprecated

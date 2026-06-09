@@ -1,18 +1,27 @@
 ---
 name: daily-work-log
-description: Generate Obsidian-ready daily logs from redacted AI assistant captures, input notes, manual notes, and automation digests in a private AI work-log vault.
+description: Generate a reviewable daily capture review from redacted AI assistant captures, input notes, manual notes, and automation digests in a private AI work-log vault. Use it to compress daily evidence, extract durable candidates, and prepare manual Second Brain, Calendar, or task decisions without automatically promoting anything.
 ---
 
 # Daily Work Log
 
 ## Overview
 
-Generate one structured daily work log from the current day's exported
-conversations, source notes, and automation digests. Keep the workflow reusable
-between Claude Code and Codex by using only portable folder conventions and
-markdown files.
+`daily-work-log` is the compatibility skill name for the daily capture review
+and processing layer. Generate one structured review artifact from the current
+day's exported conversations, source notes, and automation digests. Keep the
+workflow reusable between Claude Code and Codex by using only portable folder
+conventions and markdown files.
 
-Use `capture-assistant-session` earlier in the day to create redacted session captures in the inbox. Use `capture-input-note` for external source material, and use `automation-vault-sync` to save reviewed automation digests into the same day's inbox. This skill consumes those sources and creates the final daily log.
+Use `capture-assistant-session` earlier in the day to create redacted session
+captures in the inbox. Use `capture-input-note` only for external sources that
+need source access, extraction, redaction, or provenance tracking. Use
+`automation-vault-sync` to save reviewed automation digests into the same day's
+inbox.
+
+This skill consumes those sources and creates a daily capture review. It does
+not create final Second Brain knowledge, automatically promote candidates, or
+make Calendar / task decisions without human approval.
 
 ## Folder Contract
 
@@ -89,7 +98,8 @@ Supported input formats:
 
 Raw transcript formats such as `.jsonl` should be used only when the user explicitly confirms they are low risk and reviewed. Prefer redacted markdown captures.
 
-Ignore generated logs when gathering inputs, unless the user asks to revise an existing generated log.
+Ignore generated daily capture reviews when gathering inputs, unless the user
+asks to revise an existing generated review.
 
 ## Workflow
 
@@ -97,16 +107,22 @@ Ignore generated logs when gathering inputs, unless the user asks to revise an e
 2. Resolve the work-log root and locate the matching daily inbox and generated output paths.
 3. Read today's conversation captures, automation digests, manual notes, and
    input notes.
-4. Identify distinct work conversations, automation outputs, projects, incidents, decisions, commands, errors, fixes, and follow-ups.
+4. Identify distinct activity evidence, automation outputs, projects, personal
+   systems, incidents, decisions, commands, errors, fixes, and follow-ups.
 5. Classify each source with `scope: work | personal | mixed`. Prefer an
    explicit frontmatter `scope`; otherwise infer conservatively from the
    content and mention assumptions.
-6. Extract durable knowledge into two types:
+6. Separate daily material into:
+   - `Activity Evidence`: what happened, grouped by scope.
+   - `Durable Candidates`: material that may deserve later promotion.
+   - `Operational Follow-ups`: Calendar, reminder, task, or next-action
+     candidates that still require human approval.
+7. Extract durable candidates into two reusable shapes:
    - `Notes`: what was learned, decided, discovered, or clarified.
    - `Steps`: how to repeat a process or solve a problem.
-7. Generate or update the daily markdown log.
-8. Preserve manually edited content if the output file already exists.
-9. Report the output path and any missing input assumptions.
+8. Generate or update the daily capture review.
+9. Preserve manually edited content if the output file already exists.
+10. Report the output path and any missing input assumptions.
 
 ## Output Format
 
@@ -115,10 +131,11 @@ Use this top-level structure:
 ```markdown
 ---
 status: generated
+artifact_type: daily_capture_review
 needs_review: true
 ---
 
-# Work Daily Log - YYYY-MM-DD
+# Daily Capture Review - YYYY-MM-DD
 
 ## Source Coverage
 
@@ -131,18 +148,18 @@ needs_review: true
 - Automations:
 	- ...
 
-## Work Log
+## Activity Evidence
 
-- **<<Project or Workstream>> (<<Assistant>>; <<Topic>>)**: Did the following: #work/log #ai/claude
+- **<<Project, Area, Or Topic>> (<<Assistant or Source>>; <<Topic>>)**: Did the following: <<scope event tag>> #ai/claude
 	- ...
 
-## Learning Candidates
+## Durable Candidates
 
-- ==<<Technology or Domain>> - Notes - <<Specific Note Name>>== #work/learn #ai/claude
+- ==<<Technology or Domain>> - Notes - <<Specific Note Name>>== <<scope learning tag>> #ai/claude
 	- Notes
 		- ...
 
-- ==<<Technology or Domain>> - Steps - <<Specific Procedure Name>>== #work/learn #ai/claude
+- ==<<Technology or Domain>> - Steps - <<Specific Procedure Name>>== <<scope learning tag>> #ai/claude
 	- Steps
 		1. ...
 		2. ...
@@ -151,7 +168,7 @@ needs_review: true
 
 - ...
 
-## Follow-ups
+## Operational Follow-ups
 
 - ...
 ```
@@ -163,7 +180,7 @@ Agent tag rules:
 - Use both tags only when both agents materially contributed to the same item.
 - Treat source `candidate_tags` as hints, not as authoritative taxonomy.
 
-Keep work logs separate from personal logs:
+Keep activity evidence and candidates separated by scope:
 
 - Work event tags: `#work/log`
 - Work learning tags: `#work/learn`
@@ -177,7 +194,7 @@ Keep work logs separate from personal logs:
 
 Include:
 
-- Completed work.
+- Completed work and meaningful personal or mixed-scope activity evidence.
 - Scheduled automation outputs and reviewed automation digests.
 - Meaningful decisions.
 - Bugs, incidents, root causes, and fixes.
@@ -195,6 +212,8 @@ Exclude:
 - Raw terminal output unless the exact line is useful.
 - Secrets, tokens, private keys, credentials, customer private data, or sensitive personal data.
 - Long copied source code unless needed as a short reference.
+- Claims that generated candidates have already entered the Second Brain,
+  Calendar, reminder system, or task system.
 
 ## Existing Output Handling
 
@@ -202,9 +221,9 @@ If the generated file already exists:
 
 - Read it first.
 - Preserve sections that appear manually edited.
-- Append new workstreams or update clearly matching sections.
+- Append new activity groups or update clearly matching sections.
 - Avoid duplicating the same conversation summary.
-- Add a short `## Follow-ups` section if unresolved actions exist.
+- Add a short `## Operational Follow-ups` section if unresolved actions exist.
 
 ## References
 

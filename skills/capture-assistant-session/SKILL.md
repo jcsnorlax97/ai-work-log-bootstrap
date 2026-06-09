@@ -179,11 +179,12 @@ Exclude:
 - Raw transcript dumps.
 - Long code blocks unless a short excerpt is necessary.
 
-## Relationship To Daily Work Log
+## Relationship To Daily Capture Review
 
 This skill creates source material in `inbox/.../conversations/`.
 
-It does not create the final daily note. At end of day, run `daily-work-log` to generate:
+It does not create final Second Brain knowledge. At end of day, run
+`daily-work-log` to generate the review and processing artifact:
 
 ```text
 <work-log-root>/generated/YYYY/MM/YYYY-MM-DD.md

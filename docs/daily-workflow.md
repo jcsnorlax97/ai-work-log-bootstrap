@@ -55,7 +55,7 @@ The output should go to:
 Ask:
 
 ```text
-Use daily-work-log to generate today's work daily log from /path/to/ai-work-logs.
+Use daily-work-log to generate today's daily capture review from /path/to/ai-work-logs.
 ```
 
 The output should go to:
@@ -66,6 +66,10 @@ The output should go to:
 
 Daily generation consumes `conversations/`, `notes/`, and `automations/<automation-id>/` for the target date.
 
+The generated file is a review and processing artifact. It is not final Second
+Brain knowledge and does not automatically create Calendar events, reminders,
+or tasks.
+
 ## Review
 
 Review:
@@ -73,6 +77,7 @@ Review:
 - Whether tags are correct.
 - Whether any sensitive content was included.
 - Whether follow-ups are actionable.
-- Whether generated `#work/learn` notes are actually durable knowledge.
+- Whether generated durable candidates are actually worth promoting.
+- Whether operational follow-ups belong in Calendar, reminders, or tasks.
 
-Only after review should you copy or link the generated note into another vault.
+Only after review should you promote approved candidates into another system.

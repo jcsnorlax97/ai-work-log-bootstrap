@@ -2,7 +2,7 @@
 
 Use these instructions in `~/.claude/CLAUDE.md` if you want Claude Code to remember the AI work-log workflow.
 
-## Daily Work Log Capture
+## Daily Capture Review Workflow
 
 Keep the setup repo and the work-log data separate.
 
@@ -27,7 +27,7 @@ When a session is about a specific project, remember that the end-of-day log sys
 <work-log-root>/inbox/YYYY/MM/DD/automations/<automation-id>/
 ```
 
-Generated daily logs go to:
+Generated daily capture reviews go to:
 
 ```text
 <work-log-root>/generated/YYYY/MM/YYYY-MM-DD.md

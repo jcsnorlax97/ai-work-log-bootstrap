@@ -1,9 +1,10 @@
 ---
 status: generated
+artifact_type: daily_capture_review
 needs_review: true
 ---
 
-# Work Daily Log - YYYY-MM-DD
+# Daily Capture Review - YYYY-MM-DD
 
 ## Source Coverage
 
@@ -16,18 +17,18 @@ needs_review: true
 - Automations:
 	- ...
 
-## Work Log
+## Activity Evidence
 
-- **Project Name (Claude Code; Topic)**: Did the following: #work/log #ai/claude
+- **Project, Area, Or Topic (Assistant Or Source; Topic)**: Did the following: <<scope event tag>> #ai/claude
 	- ...
 
-## Learning Candidates
+## Durable Candidates
 
-- ==Technology or Domain - Notes - Note Name== #work/learn #ai/claude
+- ==Technology or Domain - Notes - Note Name== <<scope learning tag>> #ai/claude
 	- Notes
 		- ...
 
-- ==Technology or Domain - Steps - Procedure Name== #work/learn #ai/claude
+- ==Technology or Domain - Steps - Procedure Name== <<scope learning tag>> #ai/claude
 	- Steps
 		1. ...
 		2. ...
@@ -36,6 +37,6 @@ needs_review: true
 
 - ...
 
-## Follow-ups
+## Operational Follow-ups
 
 - ...

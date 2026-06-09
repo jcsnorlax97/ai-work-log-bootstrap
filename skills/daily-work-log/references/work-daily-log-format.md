@@ -1,4 +1,4 @@
-# Work Daily Log Format
+# Daily Capture Review Format
 
 ## Date Layout
 
@@ -41,10 +41,11 @@ Preferred source files are redacted markdown captures created by `capture-assist
 ```markdown
 ---
 status: generated
+artifact_type: daily_capture_review
 needs_review: true
 ---
 
-# Work Daily Log - YYYY-MM-DD
+# Daily Capture Review - YYYY-MM-DD
 
 ## Source Coverage
 
@@ -57,12 +58,12 @@ needs_review: true
 - Automations:
 	- `automations/example-automation/digest.md` — work
 
-## Work Log
+## Activity Evidence
 
 - **Project Name (Claude Code; Short Topic)**: Did the following: #work/log #ai/claude
 	- ...
 
-## Learning Candidates
+## Durable Candidates
 
 - ==Technology - Notes - Specific Learning== #work/learn #ai/claude
 	- Notes
@@ -77,7 +78,7 @@ needs_review: true
 
 - ...
 
-## Follow-ups
+## Operational Follow-ups
 
 - ...
 ```
@@ -106,6 +107,10 @@ Use matching tags:
 If scope is missing, infer conservatively and mention the assumption in
 `Source Coverage`.
 
+The generated artifact is a review and processing layer. It may propose
+Second Brain, Calendar, reminder, or task destinations, but nothing is promoted
+until the human approves the destination and action.
+
 ## Note Type Rules
 
 Use `Notes` for:
@@ -125,14 +130,16 @@ Use `Steps` for:
 - Deployment commands.
 - Verification checklists.
 
-## Project Naming
+## Context Naming
 
 Use the most specific stable name available:
 
 - Repository name.
 - Issue key if present.
-- Customer/project/service name if the conversation clearly centers on it.
-- `General Work` only if no better project name exists.
+- Project, service, named session, or durable area when the source clearly
+  centers on it.
+- `General Work`, `General Personal`, or `General Mixed` only if no better
+  stable name exists.
 
 ## Assistant Naming
 

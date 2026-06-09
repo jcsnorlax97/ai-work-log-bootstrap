@@ -4,7 +4,9 @@ This spec defines the portable AI work-log vault used by Claude Code, Codex, and
 
 ## Purpose
 
-The work-log vault is a private, Obsidian-compatible staging area for summarized and reviewed AI work-session notes.
+The work-log vault is a private, Obsidian-compatible staging area for
+summarized AI session notes, selected input notes, automation digests, and
+generated daily capture reviews.
 
 It is separate from:
 
@@ -100,24 +102,29 @@ Avoid:
 
 ## Generated Contract
 
-Generated daily notes go here:
+Generated daily capture reviews go here:
 
 ```text
 <work-log-root>/generated/YYYY/MM/YYYY-MM-DD.md
 ```
 
-Generated notes should be reviewable in Obsidian and should include:
+Generated reviews should be reviewable in Obsidian and should include:
 
 ```yaml
 ---
 status: generated
+artifact_type: daily_capture_review
 needs_review: true
 ---
 ```
 
-Generated daily notes should include a `Source Coverage` section listing which
+Generated daily capture reviews should include a `Source Coverage` section listing which
 conversation captures, input notes, manual notes, and automation digests were
 included for the day.
+
+They are a review and processing layer between capture and the Second Brain.
+They may preserve activity evidence and propose durable or operational
+candidates, but they must not claim those candidates have been promoted.
 
 ## Capture Frontmatter
 
@@ -174,6 +181,18 @@ candidate_tags:
 needs_review: true
 ---
 ```
+
+External input notes created through specialized source ingestion should add:
+
+```yaml
+routing_class: selected_source
+source_type: external_source
+source_kind: article-or-meeting-transcript-or-other-provenance-kind
+source_access_status: read-public-or-other-status
+```
+
+Use `source_kind` for adapter-specific provenance detail. Do not create a
+parallel cross-repo `source_type` for every provider or media format.
 
 ## Automation Digest Frontmatter
 

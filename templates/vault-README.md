@@ -1,6 +1,7 @@
 # AI Work Logs
 
-This is a private, Obsidian-compatible work-log vault for AI coding-assistant session captures and generated daily summaries.
+This is a private, Obsidian-compatible work-log vault for AI assistant session
+captures and generated daily capture reviews.
 
 Do not publish this vault to a public repo.
 
@@ -20,8 +21,8 @@ hooks/
 1. Save redacted session captures into `inbox/YYYY/MM/DD/conversations/`.
 2. Save automation digests into `inbox/YYYY/MM/DD/automations/<automation-id>/`.
 3. Add manual notes into `inbox/YYYY/MM/DD/notes/`.
-4. Generate daily summaries into `generated/YYYY/MM/YYYY-MM-DD.md`.
-5. Review generated notes before copying or linking them into another vault.
+4. Generate daily capture reviews into `generated/YYYY/MM/YYYY-MM-DD.md`.
+5. Review generated candidates before promoting them into another system.
 
 ## Security
 

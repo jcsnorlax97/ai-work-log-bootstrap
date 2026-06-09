@@ -1,6 +1,7 @@
 # Inbox
 
-Store daily source material here before running the daily work-log skill.
+Store daily source material here before running the `daily-work-log` daily
+capture review skill.
 
 Use this nested date layout:
 
@@ -22,9 +23,10 @@ Preferred capture flow:
 2. Confirm it writes a redacted markdown capture into `YYYY/MM/DD/conversations/`.
 3. Use `automation-vault-sync` to save automation digests into `YYYY/MM/DD/automations/<automation-id>/`.
 4. Add any extra human notes or redacted input notes into `YYYY/MM/DD/notes/`.
-5. Run `daily-work-log` at the end of the day to create the generated Obsidian-ready log.
+5. Run `daily-work-log` at the end of the day to create the generated daily
+   capture review.
 
 Avoid putting raw transcripts here when they may contain secrets, credentials, tokens, or sensitive customer/private data.
 
-Use `scope: work | personal | mixed` in source frontmatter so daily logs can
+Use `scope: work | personal | mixed` in source frontmatter so daily reviews can
 separate work and personal material.

@@ -1,4 +1,4 @@
 interface:
-  display_name: "Daily Work Log"
-  short_description: "Daily AI work logs for Obsidian"
-  default_prompt: "Use $daily-work-log to generate today's work daily log from the private AI work-log vault."
+  display_name: "Daily Capture Review"
+  short_description: "Review daily captures before promotion"
+  default_prompt: "Use $daily-work-log to generate today's daily capture review from the private AI work-log vault."
