@@ -52,4 +52,4 @@ copy_if_missing "$repo_root/hooks/capture_session_end.py" "$target/hooks/capture
 printf '\nAI work-log vault initialized at:\n%s\n\n' "$target"
 printf 'Use this root with Claude Code or Codex:\n%s\n\n' "$target"
 printf 'Example:\n'
-printf 'Use $capture-work-session to capture this session into %s.\n' "$target"
+printf 'Use $capture-assistant-session to capture this session into %s.\n' "$target"

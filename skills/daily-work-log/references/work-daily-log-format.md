@@ -34,7 +34,7 @@ manual-followups.md
 
 If the source has timestamps, keep them in the file content. Do not depend on filename timestamps only.
 
-Preferred source files are redacted markdown captures created by `capture-work-session`. Raw transcripts should be used only for low-risk work and should be reviewed for secrets before daily log generation.
+Preferred source files are redacted markdown captures created by `capture-assistant-session`. Raw transcripts should be used only for low-risk work and should be reviewed for secrets before daily log generation.
 
 ## Daily Output Skeleton
 

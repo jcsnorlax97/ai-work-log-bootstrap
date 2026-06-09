@@ -25,6 +25,13 @@ sibling repo:
 ../ai-ops-ecosystem-spec/scripts/check-ecosystem-repos.sh --fetch
 ```
 
+Before introducing a new capture `routing_class`, `source_type`, alias, or
+broadly reused `domain`, query the central registry:
+
+```text
+python3 ../ai-ops-ecosystem-spec/scripts/list-capture-vocabulary.py
+```
+
 ## Repo Boundary
 
 - This repo owns generic work-log vault contracts, skills, templates, bootstrap

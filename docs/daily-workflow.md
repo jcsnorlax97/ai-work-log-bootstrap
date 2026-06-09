@@ -40,7 +40,7 @@ The output should go to:
 Ask the assistant:
 
 ```text
-Use capture-work-session to capture this session into /path/to/ai-work-logs.
+Use capture-assistant-session to capture this session into /path/to/ai-work-logs.
 Redact secrets and sensitive data.
 ```
 

@@ -35,7 +35,7 @@ Generated daily logs go to:
 
 If the user says "capture this session", "save this session to the daily log inbox", "wrap up this session", or similar:
 
-1. Prefer using `/path/to/ai-work-log-bootstrap/skills/capture-work-session/SKILL.md` if it is available.
+1. Prefer using `/path/to/ai-work-log-bootstrap/skills/capture-assistant-session/SKILL.md` if it is available.
 2. Use the user's local date.
 3. Create or update a markdown capture file in today's `conversations/` folder.
 4. Include source assistant, project name, topic, goals, work completed, decisions, bugs or blockers, useful commands, files touched, notes, steps, and follow-ups.

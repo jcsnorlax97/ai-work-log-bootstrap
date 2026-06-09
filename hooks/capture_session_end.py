@@ -104,7 +104,7 @@ def main() -> int:
                 "## Notes",
                 "",
                 "- This file was created by the Claude Code SessionEnd hook.",
-                "- Use the `capture-work-session` skill for summarized, redacted session captures.",
+                "- Use the `capture-assistant-session` skill for summarized, redacted session captures.",
                 "- Run the `daily-work-log` skill at end of day to summarize reviewed captures.",
                 "- Raw transcript copying is disabled by default because transcripts may contain secrets.",
                 "",

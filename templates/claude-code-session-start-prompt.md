@@ -2,7 +2,7 @@
 
 Use this at the start of a Claude Code session when working on a specific project.
 
-Preferred current workflow: use `/path/to/ai-work-log-bootstrap/skills/capture-work-session/SKILL.md` near the end of the session and write to an independent AI work-log vault.
+Preferred current workflow: use `/path/to/ai-work-log-bootstrap/skills/capture-assistant-session/SKILL.md` near the end of the session and write to an independent AI work-log vault.
 
 ```text
 For this Claude Code session, please keep an end-of-session capture for my work daily log.
@@ -41,7 +41,7 @@ Replace sensitive values with [redacted].
 
 Do not inspect my private/main Obsidian vault root. Do not scan parent folders or follow symlinks/shortcuts out of the work-log root.
 
-When I say "capture this session", prefer using `/path/to/ai-work-log-bootstrap/skills/capture-work-session/SKILL.md` if it is available. Otherwise, write or update the capture file using the rules above.
+When I say "capture this session", prefer using `/path/to/ai-work-log-bootstrap/skills/capture-assistant-session/SKILL.md` if it is available. Otherwise, write or update the capture file using the rules above.
 ```
 
 ## Short End Prompt
@@ -49,5 +49,5 @@ When I say "capture this session", prefer using `/path/to/ai-work-log-bootstrap/
 Use this before closing the Claude Code session:
 
 ```text
-Read /path/to/ai-work-log-bootstrap/skills/capture-work-session/SKILL.md and use it to capture this session into <work-log-root>.
+Read /path/to/ai-work-log-bootstrap/skills/capture-assistant-session/SKILL.md and use it to capture this session into <work-log-root>.
 ```

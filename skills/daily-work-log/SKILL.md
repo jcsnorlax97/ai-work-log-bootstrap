@@ -12,7 +12,7 @@ conversations, source notes, and automation digests. Keep the workflow reusable
 between Claude Code and Codex by using only portable folder conventions and
 markdown files.
 
-Use `capture-work-session` earlier in the day to create redacted session captures in the inbox. Use `capture-input-note` for external source material, and use `automation-vault-sync` to save reviewed automation digests into the same day's inbox. This skill consumes those sources and creates the final daily log.
+Use `capture-assistant-session` earlier in the day to create redacted session captures in the inbox. Use `capture-input-note` for external source material, and use `automation-vault-sync` to save reviewed automation digests into the same day's inbox. This skill consumes those sources and creates the final daily log.
 
 ## Folder Contract
 

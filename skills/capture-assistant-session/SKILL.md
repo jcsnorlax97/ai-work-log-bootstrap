@@ -1,30 +1,15 @@
 ---
-name: capture-work-session
-description: Deprecated compatibility alias for capture-assistant-session. Use only when an existing prompt explicitly invokes capture-work-session; otherwise use capture-assistant-session for any Codex, Claude Code, or AI coding assistant session worth preserving.
+name: capture-assistant-session
+description: Capture the current Claude Code, Codex, or AI coding assistant session into a private AI work-log vault as a redacted markdown summary.
 ---
 
-# Capture Work Session Compatibility Alias
-
-## Deprecated
-
-Use `capture-assistant-session` for new captures. This alias remains available
-so older prompts and installations do not fail during migration.
-
-When invoked, follow:
-
-```text
-../capture-assistant-session/SKILL.md
-```
-
-The canonical skill name describes the source (`assistant_session`), while
-`scope: work | personal | mixed` and `domain` describe what the session was
-about.
+# Capture Assistant Session
 
 ## Overview
 
-For compatibility, follow the same safe, summarized assistant-session capture
-workflow below. New prompts and documentation must use
-`capture-assistant-session`.
+Create a safe, summarized capture of the current AI assistant session and save
+it to the AI work-log vault inbox. The session may have `work`, `personal`, or
+`mixed` scope; the skill name describes the source, not the life area.
 
 ## Output Location
 

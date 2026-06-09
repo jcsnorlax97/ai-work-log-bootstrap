@@ -1,6 +1,7 @@
 # AI Work Log Bootstrap
 
-Portable setup kit for capturing AI coding-assistant work sessions into an isolated, Obsidian-compatible work-log vault.
+Portable setup kit for capturing AI assistant sessions into an isolated,
+Obsidian-compatible work-log vault.
 
 This repo contains setup docs, specs, templates, skills, hooks, and bootstrap scripts. It intentionally does **not** contain real work logs, generated notes, inbox captures, transcripts, or private Obsidian vault content.
 
@@ -74,7 +75,7 @@ The scripts create the work-log vault layout and copy templates/hooks. They do n
 ## Daily Workflow
 
 1. Work in the project repo, not in your private/main Obsidian vault.
-2. Use `capture-work-session` to save a summarized, redacted session capture into the AI work-log vault.
+2. Use `capture-assistant-session` to save a summarized, redacted session capture into the AI work-log vault.
 3. Use `automation-vault-sync` to save reviewed heartbeat automation digests when needed.
 4. Add manual notes to the same day's inbox when needed.
 5. Run `daily-work-log` at end of day to create a generated daily summary.
@@ -90,3 +91,7 @@ The scripts create the work-log vault layout and copy templates/hooks. They do n
 - Real work-log data should stay local, encrypted, or privately synced outside this repo.
 
 Read [SECURITY.md](SECURITY.md) before enabling hooks or sharing logs across machines.
+
+`capture-assistant-session` is the canonical skill name.
+`capture-work-session` remains as a deprecated compatibility alias during
+migration.

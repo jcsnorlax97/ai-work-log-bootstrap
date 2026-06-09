@@ -87,7 +87,7 @@ Do not put raw external transcripts into `notes/` by default.
 
 Preferred source files:
 
-- Redacted `.md` captures created by `capture-work-session`.
+- Redacted `.md` captures created by `capture-assistant-session`.
 - Redacted `.md` automation digests created by `automation-vault-sync`.
 - Human-written `.md` notes.
 - Short `.txt` notes.
@@ -126,19 +126,28 @@ Session captures should include:
 ```yaml
 ---
 status: inbox
+routing_class: assistant_session
+source_type: assistant_conversation
 source: codex
 project: example-project
+domain: software_engineering
 scope: work
 topic: short-topic
 candidate_tags:
-  - work/log
-  - work/learn
-  - ai/codex
+  - ai/assistant-session
+  - scope-appropriate/candidate
 needs_review: true
 ---
 ```
 
 Use `candidate_tags` because assistant classification is not authoritative.
+Choose tags that match `scope` and `domain`; do not add `work/*` tags merely
+because the capture lives in the AI work-log vault.
+
+Use `routing_class: assistant_session` for these captures. Use
+`source_type: assistant_conversation` for the material shape, while `source`
+keeps the specific assistant such as Codex or Claude Code. Use `domain` for the
+topic or project area; do not infer work/personal scope from the skill name.
 
 Use `scope` as the primary work/personal boundary. Valid values:
 

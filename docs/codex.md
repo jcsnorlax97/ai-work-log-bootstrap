@@ -9,7 +9,7 @@ Use Codex in project repositories or in the bootstrap repo. Do not give Codex br
 Capture a session:
 
 ```text
-Use /path/to/ai-work-log-bootstrap/skills/capture-work-session/SKILL.md to capture this session into /path/to/ai-work-logs.
+Use /path/to/ai-work-log-bootstrap/skills/capture-assistant-session/SKILL.md to capture this session into /path/to/ai-work-logs.
 ```
 
 Sync an automation digest:
@@ -29,7 +29,7 @@ Use /path/to/ai-work-log-bootstrap/skills/daily-work-log/SKILL.md to generate to
 Install the skill folders into Codex's global skills directory:
 
 ```text
-~/.codex/skills/capture-work-session
+~/.codex/skills/capture-assistant-session
 ~/.codex/skills/automation-vault-sync
 ~/.codex/skills/daily-work-log
 ```
@@ -39,10 +39,13 @@ Then restart Codex.
 After restart:
 
 ```text
-Use $capture-work-session to capture this session into /path/to/ai-work-logs.
+Use $capture-assistant-session to capture this session into /path/to/ai-work-logs.
 Use $automation-vault-sync to sync the latest Vault Sync Block into /path/to/ai-work-logs.
 Use $daily-work-log to generate today's work daily log from /path/to/ai-work-logs.
 ```
+
+`capture-work-session` may remain installed temporarily as a deprecated
+compatibility alias. Use `capture-assistant-session` for new prompts.
 
 ## Sandbox Guidance
 

@@ -1,13 +1,15 @@
 ---
 status: inbox
+routing_class: assistant_session
+source_type: assistant_conversation
 source: claude-code-or-codex
 project:
+domain:
 scope: work
 topic:
 candidate_tags:
-  - work/log
-  - work/learn
-  - ai/claude-or-codex
+  - ai/assistant-session
+  - scope-appropriate/candidate
 needs_review: true
 ---
 
@@ -15,6 +17,7 @@ needs_review: true
 
 Source assistant: Claude Code / Codex
 Project:
+Domain:
 Scope: work / personal / mixed
 Topic:
 Time range:

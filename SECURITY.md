@@ -28,7 +28,7 @@ The filesystem boundary matters more than prompt instructions. Do not rely on "p
 | Mode | Default | Risk | Notes |
 | --- | --- | --- | --- |
 | Manual notes | Enabled | Low | Human-written, reviewable source material. |
-| `capture-work-session` | Recommended | Medium | Assistant summarizes and redacts, but still requires review. |
+| `capture-assistant-session` | Recommended | Medium | Assistant summarizes and redacts, but still requires review. |
 | `daily-work-log` | Recommended | Medium | Generates reviewed daily summaries from the private work-log vault. |
 | `SessionEnd` metadata hook | Optional | Low | Writes session metadata only by default. |
 | Raw transcript copying | Disabled | High | May copy secrets, customer data, private URLs, or confidential context. |

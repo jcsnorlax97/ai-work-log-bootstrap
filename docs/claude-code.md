@@ -9,7 +9,7 @@ Run Claude Code inside project repositories. Do not run it inside your private/m
 Use the repo-local skill file and explicitly provide the work-log vault:
 
 ```text
-Read /path/to/ai-work-log-bootstrap/skills/capture-work-session/SKILL.md and use it to capture this session into /path/to/ai-work-logs.
+Read /path/to/ai-work-log-bootstrap/skills/capture-assistant-session/SKILL.md and use it to capture this session into /path/to/ai-work-logs.
 ```
 
 End-of-day generation:

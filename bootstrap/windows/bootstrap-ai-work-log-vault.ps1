@@ -61,4 +61,4 @@ Write-Host "AI work-log vault initialized at:"
 Write-Host $VaultRoot
 Write-Host ""
 Write-Host "Example:"
-Write-Host "Use `$capture-work-session to capture this session into $VaultRoot."
+Write-Host "Use `$capture-assistant-session to capture this session into $VaultRoot."
