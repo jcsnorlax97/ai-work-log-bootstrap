@@ -61,6 +61,34 @@ script also does not install the work-log skills globally; use the repo-local
 skill paths or install them separately as described in the runtime-specific
 docs.
 
+## Install The Canonical Codex Capture Skill
+
+For a new Windows setup, install `capture-assistant-session` as a live directory
+junction to the canonical repo source:
+
+```powershell
+$source = (Resolve-Path .\skills\capture-assistant-session).Path
+$target = "$env:USERPROFILE\.codex\skills\capture-assistant-session"
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.codex\skills" | Out-Null
+if (Test-Path -LiteralPath $target) {
+  Get-Item -Force -LiteralPath $target | Format-List FullName,LinkType,Target
+} else {
+  New-Item -ItemType Junction -Path $target -Target $source
+}
+```
+
+Verify:
+
+```powershell
+Get-Item $target | Format-List FullName,LinkType,Target
+Test-Path "$target\SKILL.md"
+```
+
+The expected result is a live `Junction` with `SKILL.md` resolving from this
+repository. Install `automation-vault-sync` and `daily-work-log` separately
+only when needed. Do not install the deprecated `capture-work-session` alias
+for a new setup.
+
 ## Optional Claude Code Global Memory
 
 Claude Code can load global instructions from:
