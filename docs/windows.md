@@ -8,6 +8,38 @@ Work-log vault: %USERPROFILE%\Documents\a-ai-obsidian-vaults\ai-work-logs\
 Main vault:     <private Obsidian vault, not scanned by assistants>
 ```
 
+## Prerequisites
+
+Install Git for Windows and Python 3 before enabling the optional
+`SessionEnd` hook. Verify from PowerShell:
+
+```powershell
+git --version
+winget --info
+python --version
+py --version
+python -m pip --version
+```
+
+Python is not required to run the bootstrap script or use the vault manually.
+It is required for the optional Python hook.
+
+On Windows, use `python` or `py`; `python3` may resolve to a Microsoft Store
+execution alias instead of the installed interpreter.
+
+The recommended Python installation path is the official Python package
+installed through `winget` or Python.org, with PATH, `pip`, and the `py`
+launcher enabled:
+
+```powershell
+winget search --id Python.Python --source winget
+winget install --id Python.Python.<major-minor> --exact --source winget
+```
+
+Replace `<major-minor>` with the selected stable line. If `winget` cannot
+start even though its WindowsApps alias exists, update or reinstall
+**App Installer** from Microsoft Store and restart Windows.
+
 ## Clone The Setup Repo
 
 ```powershell
@@ -23,6 +55,11 @@ PowerShell -ExecutionPolicy Bypass -File .\bootstrap\windows\bootstrap-ai-work-l
 ```
 
 The script creates the private work-log vault and copies templates/hooks. It does not modify your private/main Obsidian vault.
+
+Cloning this repository alone does not bootstrap the vault. The bootstrap
+script also does not install the work-log skills globally; use the repo-local
+skill paths or install them separately as described in the runtime-specific
+docs.
 
 ## Optional Claude Code Global Memory
 
